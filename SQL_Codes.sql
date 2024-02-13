@@ -215,13 +215,12 @@ DECLARE @i INT = 1;
 
 WHILE @i <= 50000
 BEGIN
-    SET @username = 'user' + CAST(@i AS VARCHAR); ; -- username deðiþkenine 'user' ile baþlayan ve i içeren bir deðer atayýn.
-    SET @email = @username + '@gmail.com'; -- email deðiþkenine username deðiþkeninin deðeri ile '@gmail.com' ekleyerek bir deðer atayýn.
-    SET @password = 'password' + CAST(ROUND(RAND() * 1000, 0) AS VARCHAR); -- password deðiþkenine 'password' ile baþlayan ve 1 ile 1000 arasýnda rastgele bir sayý içeren bir deðer atayýn.
-    SET @register_date = DATEADD(DAY, ROUND(RAND() * 365, 0), '2024-01-01'); -- register_date deðiþkenine 2020 yýlýnda rastgele bir tarih deðeri atayýn.
-    SET @last_login_date = DATEADD(DAY, ROUND(RAND() * 365, 0), @register_date); -- last_login_date deðiþkenine 2020 yýlýnda rastgele bir tarih deðeri atayýn.
-    SET @total_play_time = ROUND(RAND() * 2000, 0); -- total_play_time deðiþkenine 0 ile 100 arasýnda rastgele bir tam sayý atayýn.
-
+    SET @username = 'user' + CAST(@i AS VARCHAR); ;
+    SET @email = @username + '@gmail.com';
+    SET @password = 'password' + CAST(ROUND(RAND() * 1000, 0) AS VARCHAR);
+    SET @register_date = DATEADD(DAY, ROUND(RAND() * 365, 0), '2024-01-01'); 
+    SET @last_login_date = DATEADD(DAY, ROUND(RAND() * 365, 0), @register_date); 
+    SET @total_play_time = ROUND(RAND() * 2000, 0);
     INSERT INTO Player (username, email, password, register_date, last_login_date, total_play_time)
     VALUES (@username, @email, @password, @register_date, @last_login_date, @total_play_time);
 
@@ -241,8 +240,8 @@ DECLARE @i INT = 1;
 
 WHILE @i <= 50000
 BEGIN
-    SET @player_id = ROUND(RAND() * 24999 + 1, 0); -- player_id deðiþkenine 1 ile 1000 arasýnda rastgele bir tam sayý atayýn.
-    SET @friend_player_id = ROUND(RAND() * 24999 + 1, 0); -- friend_id deðiþkenine 1 ile 1000 arasýnda rastgele bir tam sayý atayýn.
+    SET @player_id = ROUND(RAND() * 24999 + 1, 0);
+    SET @friend_player_id = ROUND(RAND() * 24999 + 1, 0);
 
     INSERT INTO Friend (player_id,friend_player_id)
     VALUES (@player_id,  @friend_player_id);
@@ -277,23 +276,23 @@ DECLARE @i INT = 1;
 
 WHILE @i <= 100000
 BEGIN
-    SET @player_id = ROUND(RAND() * 24999 + 1, 0); -- player_id deðiþkenine 1 ile 25000 arasýnda rastgele bir tam sayý atayýn.
-    SET @name = 'character' + CAST(@i AS VARCHAR); -- name deðiþkenine 'character' ile baþlayan ve sayacýn deðerini içeren bir deðer atayýn.
-    SET @level_id = ROUND(RAND() * 3999 + 1, 0); -- level deðiþkenine 1 ile 1000 arasýnda rastgele bir tam sayý atayýn.
-    SET @class = CASE @i%3 -- class deðiþkenine  deðerlerinden birini rastgele atayýn.
+    SET @player_id = ROUND(RAND() * 24999 + 1, 0); 
+    SET @name = 'character' + CAST(@i AS VARCHAR);
+    SET @level_id = ROUND(RAND() * 3999 + 1, 0);
+    SET @class = CASE @i%3 
         WHEN 0 THEN 'warrior'
         WHEN 1 THEN 'mage'
 		WHEN 2 THEN 'rogue'
     END;
-    SET @health = ROUND(RAND() * 1000, 0); -- health deðiþkenine 100 ile 1100 arasýnda rastgele bir tam sayý atayýn.
-    SET @mana = ROUND(RAND() * 100, 0); -- mana deðiþkenine 50 ile 550 arasýnda rastgele bir tam sayý atayýn.
-    SET @strength = ROUND(RAND() * 100, 0); -- strength deðiþkenine 10 ile 110 arasýnda rastgele bir tam sayý atayýn.
-    SET @intelligence = ROUND(RAND() * 100, 0); -- intelligence deðiþkenine 10 ile 110 arasýnda rastgele bir tam sayý atayýn.
-    SET @agility = ROUND(RAND() * 100, 0); -- agility deðiþkenine 10 ile 110 arasýnda rastgele bir tam sayý atayýn.
-    SET @critical = ROUND(RAND() * 50, 0); -- critical deðiþkenine 5 ile 55 arasýnda rastgele bir tam sayý atayýn.
-    SET @defense = ROUND(RAND() * 100, 0); -- defense deðiþkenine 10 ile 110 arasýnda rastgele bir tam sayý atayýn.
-    SET @money = ROUND(RAND() * 10000, 0); -- money deðiþkenine 100 ile 1100 arasýnda rastgele bir tam sayý atayýn.
-    SET @item_count = ROUND(RAND() * 10, 0); -- item_count deðiþkenine 1 ile 10 arasýnda rastgele bir tam sayý atayýn.
+    SET @health = ROUND(RAND() * 1000, 0);
+    SET @mana = ROUND(RAND() * 100, 0);
+    SET @strength = ROUND(RAND() * 100, 0);
+    SET @intelligence = ROUND(RAND() * 100, 0);
+    SET @agility = ROUND(RAND() * 100, 0);
+    SET @critical = ROUND(RAND() * 50, 0); 
+    SET @defense = ROUND(RAND() * 100, 0);
+    SET @money = ROUND(RAND() * 10000, 0); 
+    SET @item_count = ROUND(RAND() * 10, 0); 
 
     INSERT INTO Character (player_id, name, level_id, class, health, mana, strength, intelligence, agility, critical, defense, item_count )
     VALUES (@player_id, @name, @level_id, @class, @health, @mana, @strength, @intelligence, @agility, @critical, @defense, @item_count);
