@@ -96,7 +96,7 @@
 
 ![image](https://github.com/sahinsalim/SQLFinalProject/assets/156147444/d6ab8863-6022-4be9-aa88-41c9ba68185c)
 
-<h4>Query4 : Player with the highest total_score </h4>
+<h3>Query4 : Player with the highest total_score </h4>
 
 ![image](https://github.com/sahinsalim/SQLFinalProject/assets/156147444/0b2015c1-8168-446a-9fbd-0950eef4fdff)
 
