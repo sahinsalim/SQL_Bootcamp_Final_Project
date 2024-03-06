@@ -72,7 +72,7 @@
 
 ![image](https://github.com/sahinsalim/GitHubTests/assets/156147444/f06e0238-2544-4400-860e-9a46a2c57d73)
 
-<h4>This way it keeps 100.000 data in the view.</h4>
+<h4>This way keeps 100.000 data in the view.</h4>
 
 ![image](https://github.com/sahinsalim/SQLFinalProject/assets/156147444/1d8ef882-9b2a-4557-83b9-44e975a85c26)
 
